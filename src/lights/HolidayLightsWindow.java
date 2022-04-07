@@ -27,11 +27,11 @@ public class HolidayLightsWindow extends JFrame {
 	
 	private static final long serialVersionUID = -722257469624438083L;
 	private HolidayLights hl;
-	private static final int millsPerFrame = 500;
+	private static int millsPerFrame = 500;
 	
 	public HolidayLightsWindow(HolidayLights hl) {
 		// Sets up the title bar
-		super("Lab 0: Holiday Lights");
+		super("Lab 3: Holiday Lights");
 		
 		this.hl = hl;
 		this.setup();
@@ -71,6 +71,8 @@ public class HolidayLightsWindow extends JFrame {
 		
 		public LightWindow(HolidayLights hl) {
 			this.hl = hl;
+			millsPerFrame = (int) (hl.randomIntervalSecond()*500);
+
 			this.timer = new Timer(HolidayLightsWindow.millsPerFrame, new ActionListener(){
 				public void actionPerformed(ActionEvent e) {
 					update();

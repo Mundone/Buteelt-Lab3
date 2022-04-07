@@ -14,5 +14,5 @@ public interface HolidayLights {
 	 * @return appearence of lights at next time slice.
 	 */
 	public List<Light> next();
-	
+	public float randomIntervalSecond();
 }
